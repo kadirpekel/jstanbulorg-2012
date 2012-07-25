@@ -6,7 +6,7 @@
 		
 		<title>jstanbulorg-2012</title>
 
-		<meta name="description" content="Node, Connect ve Coffeemate ile Web Uygulama Gelistirme">
+		<meta name="description" content="Node, Connect ve Meryl ile Web Uygulama Gelistirme">
 		<meta name="author" content="Kadir Pekel">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -19,227 +19,252 @@
 		<link rel="stylesheet" href="revealjs/css/print.css" type="text/css" media="print">
 
 		<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+		<style type="text/css">
+			.pull-left {
+				float: left;
+			}
+			cite {
+				text-align: right;
+				display: block;
+				font-size: small;
+				width: 70%;
+				margin: 5px auto;
+				padding: 5px;
+			}
+			.borderless {
+				border: none !important;
+				background: none !important;
+				-webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0) !important;
+				   -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0) !important;
+				        box-shadow: 0 0 0px rgba(0, 0, 0, 0) !important;
+			}
+			.enlight .state-background {
+				background: rgba( 255, 255, 255, 1 );
+			}
+			.browny {
+				color: rgba(113, 99, 88, 1) !important;
+			}
+		</style>
 	</head>
 	
 	<body>
 		
 		<div class="reveal">
 
-			<!-- Used to fade in a background when a specific slide state is reached -->
 			<div class="state-background"></div>
 			
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3 class="inverted">CSS 3D Presentations</h3>
+					<h1>Node, Connect ve Meryl ile Web Uygulama Gelistirme</h1>
+					<cite>~ Kadir Pekel</cite>
 					<script>
-						// Delicously hacky. Look away.
 						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
 					</script>
 				</section>
 				
 				<section>
-					<h2>Heads Up</h2>
+					<h2>Ben Kimim?</h2>
+                    <h1><img src="http://www.gravatar.com/avatar/a78e9622fddfc51ff1535880dfae943c?s=80" width="80" height="80" /> Kadir Pekel</h1>
 					<p>
-						reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with 
-						support for CSS 3D transforms to see it in its full glory.
+						<small>Developer / Hacker / Blogger / Father</small>
 					</p>
 					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
+						<ul>
+							<li>Blog: <a href="http://kadirpekel.com">kadirpekel.com</a></li>
+							<li>Twitter: <a href="http://twitter.com/kadirpekel">twitter.com/kadirpekel</a></li>
+							<li>Github: <a href="http://github.com/kadirpekel">github.com/kadirpekel</a></li>
+							<li>Linkedin: <a href="http://linkedin.com/kadirpekel">linkedin.com/kadirpekel</a></li>
+						</ul>
 					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you run the speaker notes server.
-					</aside>
-				</section>
-				
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,<br/>
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Holistic Overview</h2>
 					<p>
-						Press <strong>ESC</strong> to enter the slide overview!
+						<img src="img/rocketinternet.png" />
 					</p>
 				</section>
-
+				<section data-state="snow">
+					<h2>JavaScript ile Web Uygulamalari mi?</h2>
+					<img src="img/meme.jpg" class="pull-left" />
+					<p>Yahu bu JavaScript; web sayfalarinda kayan menuler, imleci takip eden saatler, kar yagdirma efektleri vs. yapmamiza yarayan birsey degil miydi?</p>
+				</section>
+				<section data-state="alert">
+					<h1>Tabi ki Hayir!</h1>
+				</section>
 				<section>
-					<h2>Works in Mobile Safari</h2>
 					<p>
-						Try it out! You can swipe through the slides pinch your way to the overview.
+						<img src="img/crockford.jpg" />
+					</p>
+					<p>
+						<blockquote>JavaScript is the world's most misunderstood programming language.</blockquote>
+						<cite>~ Douglas Crockford</cite>
 					</p>
 				</section>
-
 				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like:
-					</p>
 					<ul>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=linear">Linear</a></li>
+						<h2>JavaScript gercek bir programlama dili</h2>
+						<li>Her zaman oyleydi.</li>
+						<li>Web 2.0/AJAX akimi ile beraber istemci tabanli uygulamalar JavaScript' in populeritesine ivme kazandirdi.</li>
+						<li>Google, <code>V8</code> adiyla Lars Bak' in onderliginde gelistirilen nihayet <strong>hizli</strong> bir derleyici(neden?) tanitti.</li>
+                        <li>Ryan Dahl <code>V8</code> motorunun uzerinde <code>Node</code> adiyla, asenkron ag kabiliyetleri on planda bir standart kitaplik gelistrdi.</li>
 					</ul>
 				</section>
-
 				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+					<h2>Peki JavaScript ile sunucu tarafli web uygulama gelistirmeyi cazip kilan nedir?</h2>
+					<img src="img/challenge_considered.jpg" />
 				</section>
-				
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<section data-state="alert">
-						<h2>Global State</h2>
-						<p>
-							Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-							will be added as a class to the document element when the slide is open. This let's you
-							apply broader style changes, like switching the background.
-						</p>
-						<a href="#/7/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
-					</section>
-					<section data-state="blackout">
-						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
-					</section>
-					<section data-state="soothe">
-						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+				<section data-state="blackout">
+                    <p>
+                    	<img src="img/voltron_force_profiles.jpg" />
+						<!-- <object width="600" height="450"><param name="movie" value="http://www.youtube.com/v/tZZv5Z2Iz_s?version=3&amp;hl=en_US&amp;rel=0&autoplay=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/tZZv5Z2Iz_s?version=3&amp;hl=en_US&amp;rel=0&autoplay=1" type="application/x-shockwave-flash" width="600" height="450" allowscriptaccess="always" allowfullscreen="true"></embed></object> -->
 					</p>
-					<pre><code contenteditable style="font-size: 18px; margin-top: 20px;">Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
+				</section>
+				<section data-state="soothe">
+					<h3>Hizli, etkin, olceklenebilir, olay tabanli ve asenkron bir uygulama gelistirme platformu!</h3>
+                    <p>
+                    	<img src="img/voltron.jpg" />
+					</p>
+				</section>
+				<section>
+					<img class="borderless" src="img/nodejs.png" />
+					<pre><code contenteditable>var http = require('http');
+
+var server = http.createServer(function(req, resp) {
+  resp.end('Hello World');
+});
+
+server.listen(3000);
 					</code></pre>
 				</section>
-
 				<section>
-					<h2>Clever Quotes</h2>
+					<h2>Javascript ile web uygulamalari yazabilirim!</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
+						<img src="img/all_the_things_1.png" />
+						<img src="img/all_the_things_2.png" />
 					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				
+					<h2>Iyi ama daha fazlasina ihtiyacim yok mu?</h2>
+				</section>	
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-    
-    var nodes = document.querySelectorAll( selector );
+					<h2>Modern bir web uygulamasi gelistirebilmek icin gerekli bir kac unsura ihtiyacimiz var.</h2>
+					<ul>
+						<li class="fragment">Orta katman mimarisi (oturum, cerez, statik icerik vs. yonetimi)</li>
+						<li class="fragment">Sablonlama altyapisi (templating)</li>
+						<li class="fragment">Url yonlendirme (routing)</li>
+						<li class="fragment">Http durum yonetimi (40x, 50x http kodlari)</li>
+						<li class="fragment">Moduler yapilanma (seperation of concerns)</li>
+					</ul>
+				</section>
+				<section data-state="enlight">
+					<img class="borderless" src="img/meryl.png" />
+					<blockquote class="browny borderless">Minimalist web framework for nodejs</blockquote>
+				</section>
+				<section data-state="enlight">
+					<img class="borderless" src="img/meryl_web.png" />
+				</section>
+				<section>
+					<h2>Ayaklarimizi suya sokalim.</h2>
+					<pre><code>// take the pills
+var meryl = require('meryl');
 
-    for( var i = 0, len = nodes.length; i < len; i++ ) {
-      var node = nodes[i];
+// first, take it easy
+meryl.get('/', function (req, resp) {
+    resp.end('&lt;h3&gt;Hello, World!&lt;/h3&gt;');
+});
 
-      if( !node.className ) ) {
-        node.className += ' roll';
-      }
-    };
+// not impressed? let it interfere with blood some more
+meryl.get('/greet/{who}', function(req, resp) {
+    resp.render('greeter_template', {name: req.params.who});
+});
+
+// lay down and enjoy it
+meryl.plug('GET *', function(req, resp, next) {
+    resp.setHeader('server', 'meryl');
+    next();
+});
+
+// now you are a 'meryl' junkie
+meryl.run();
+					</code></pre>
+				</section>
+				<section>
+					<h2>Tam olarak nasil?</h2>
+					<img class="borderless" src="img/layers.png" />
+				</section>
+				<section>
+					<h2>Eklentiler (Plugins)</h2>
+						<pre><code>var meryl = require('meryl');
+
+var users = { 'id1': 'kermit', 'id2': 'beaker' };
+
+// Simple authorization plugin
+meryl.plug('*', function(req, resp, next) {
+	var username = users[req.params.query.userid];
+	if (username) {
+		req.username = username;
+		next();
+	} else {
+		resp.statusCode = 401;
+		throw new Error('access denied');
+	}
+});
+
+meryl.get('/', function (req, resp) {
+	resp.end('Hello ' + req.username);
+});
+meryl.run();
+					</code></pre>
+				</section>
+				<section>
+					<h2>Yonlendiriciler (routers)</h2>
+					<pre><code>var meryl = require('meryl');
+
+var users = { 'id1': 'kermit', 'id2': 'beaker' };
+
+meryl.get('/', function (req, resp) {
+  for (userid in users) {
+    var username = users[userid];
+    resp.write('&lt;a href="/users/' + username + '"&gt;' + username +'&lt;/a&gt;');
   }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-				
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,<br/>
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+  resp.end();
+});
 
-				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
+meryl.get('/users/{username}', function (req, resp) {
+  resp.end('Hello ' + (req.params.username || 'World'));
+});
+
+meryl.run();
+					</code></pre>
 				</section>
-				
 				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png">
-					</a>
+					<h2>Soblonlar (templates)</h2>
+					<pre><code>var meryl = require('meryl');
+var users = { 'id1': 'kermit', 'id2': 'beaker' };
+meryl.get('/', function (req, resp) {
+  resp.render('index', {'users': users});
+});
+meryl.get('/users/{username}', function (req, resp) {
+  resp.render('userdetail', {'username': req.params.username});
+});
+meryl.run();
+					</code></pre>
+					<pre><code>&lt;!-- index.jshtml --&gt;
+&lt;ul&gt;
+  &lt;% for (userid in users) { %&gt;
+    &lt;li&gt;
+      &lt;a href="/users/&lt;%= users[userid] %&gt;"&gt;&lt;%= users[userid] %&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;% } %&gt;
+&lt;/ul&gt;
+					</code></pre>
+					<pre><code>&lt;!-- userdetail.jshtml --&gt;
+&lt;h1&gt;Hello &lt;%= username %&gt;&lt;/h1&gt;
+					</code></pre>
 				</section>
-				
 				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
+					<h1>SORU - CEVAP</h1>
+					<img src="img/trollface.jpg" />
 				</section>
-				
 				<section>
-					<h1>THE END</h1>
-					<h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
+					<h1>TESEKKURLER :)</h1>
+					<img src="img/thank_you.jpg" />
+					<p><small>kadirpekel@gmail.com</small></p>
 				</section>
 			</div>
 
@@ -261,6 +286,9 @@ function linkify( selector ) {
 		<script>
 			// Load reveal.js as well as a classList polyfill if needed
 			head.js( !document.body.classList ? 'revealjs/lib/js/classList.js' : null )
+			    .js( 'js/snowstorm.js', function () {
+			    	snowStorm.toggled = false;
+			    })
 				.js( 'revealjs/js/reveal.js', function() {
 
 				// Parse the query string into a key/value object
@@ -277,6 +305,15 @@ function linkify( selector ) {
 				// Fires each time a new slide is activated
 				Reveal.addEventListener( 'slidechanged', function( event ) {
 					// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+					if (event.currentSlide.getAttribute('data-state') === 'snow') {
+						snowStorm.toggleSnow();
+						snowStorm.toggled = true;
+					} else {
+						if (snowStorm.toggled) {
+							snowStorm.toggleSnow();
+							snowStorm.toggled = false;
+						}
+					}
 				} );
 
 				// Full list of configuration options available here:
