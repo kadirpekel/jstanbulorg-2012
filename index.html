@@ -26,10 +26,13 @@
 			cite {
 				text-align: right;
 				display: block;
-				font-size: small;
+				font-size: smaller;
 				width: 70%;
 				margin: 5px auto;
 				padding: 5px;
+			}
+			.smaller {
+				font-size: smaller !important;
 			}
 			.borderless {
 				border: none !important;
@@ -82,11 +85,12 @@
 				</section>
 				<section data-state="snow">
 					<h2>JavaScript ile Web Uygulamalari mi?</h2>
-					<img src="img/meme.jpg" class="pull-left" />
-					<p>Yahu bu JavaScript; web sayfalarinda kayan menuler, imleci takip eden saatler, kar yagdirma efektleri vs. yapmamiza yarayan birsey degil miydi?</p>
+					<img src="img/mostinterestingman.jpg" class="pull-left" />
+					<p>Yahu bu JavaScript; web sayfalarinda kayan menuler, imleci takip eden saatler, kar yagdirma efektleri vs. yapmamiza yaramiyor muydu?</p>
 				</section>
 				<section data-state="alert">
 					<h1>Tabi ki Hayir!</h1>
+					<img src="img/rage_guy_angry_fu.jpg" />
 				</section>
 				<section>
 					<p>
@@ -106,32 +110,36 @@
                         <li>Ryan Dahl <code>V8</code> motorunun uzerinde <code>Node</code> adiyla, asenkron ag kabiliyetleri on planda bir standart kitaplik gelistrdi.</li>
 					</ul>
 				</section>
+				<section data-state="alert">
+					<img class="borderless" src="img/html5.png" />
+					<h1 style="display:inline !important; margin: 30px; font-size:224px;">vs.</h1>
+					<img class="borderless" src="img/flash.png" />
+				</section>
 				<section>
 					<h2>Peki JavaScript ile sunucu tarafli web uygulama gelistirmeyi cazip kilan nedir?</h2>
 					<img src="img/challenge_considered.jpg" />
 				</section>
-				<section data-state="blackout">
+				<section>
                     <p>
                     	<img src="img/voltron_force_profiles.jpg" />
 						<!-- <object width="600" height="450"><param name="movie" value="http://www.youtube.com/v/tZZv5Z2Iz_s?version=3&amp;hl=en_US&amp;rel=0&autoplay=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/tZZv5Z2Iz_s?version=3&amp;hl=en_US&amp;rel=0&autoplay=1" type="application/x-shockwave-flash" width="600" height="450" allowscriptaccess="always" allowfullscreen="true"></embed></object> -->
 					</p>
 				</section>
-				<section data-state="soothe">
-					<h3>Hizli, etkin, olceklenebilir, olay tabanli ve asenkron bir uygulama gelistirme platformu!</h3>
+				<section data-state="blackout">
+					<h3>Hizli, etkin, olceklenebilir, olay tabanli ve asenkron uygulama gelistirme platformu!</h3>
                     <p>
                     	<img src="img/voltron.jpg" />
 					</p>
 				</section>
 				<section>
 					<img class="borderless" src="img/nodejs.png" />
-					<pre><code contenteditable>var http = require('http');
+					<pre><code>var http = require('http');
 
-var server = http.createServer(function(req, resp) {
+var server = http.createServer(function (req, resp) {
   resp.end('Hello World');
 });
 
-server.listen(3000);
-					</code></pre>
+server.listen(3000);</code></pre>
 				</section>
 				<section>
 					<h2>Javascript ile web uygulamalari yazabilirim!</h2>
@@ -142,13 +150,13 @@ server.listen(3000);
 					<h2>Iyi ama daha fazlasina ihtiyacim yok mu?</h2>
 				</section>	
 				<section>
-					<h2>Modern bir web uygulamasi gelistirebilmek icin gerekli bir kac unsura ihtiyacimiz var.</h2>
+					<h2>Modern web uygulamalari gelistirebilmek icin bazi temel unsurlara ihtiyacimiz var.</h2>
 					<ul>
-						<li class="fragment">Orta katman mimarisi (oturum, cerez, statik icerik vs. yonetimi)</li>
 						<li class="fragment">Sablonlama altyapisi (templating)</li>
 						<li class="fragment">Url yonlendirme (routing)</li>
 						<li class="fragment">Http durum yonetimi (40x, 50x http kodlari)</li>
 						<li class="fragment">Moduler yapilanma (seperation of concerns)</li>
+						<li class="fragment">Orta katman mimarisi (oturum, cerez, statik icerik vs. yonetimi)</li>
 					</ul>
 				</section>
 				<section data-state="enlight">
@@ -159,103 +167,251 @@ server.listen(3000);
 					<img class="borderless" src="img/meryl_web.png" />
 				</section>
 				<section>
+					<h2>Adeta bir</h2>
+					<h1><img class="borderless" src="img/ruby.png" /> Camping</h1>
+					<h1><img class="borderless" src="img/python.png" /> Flask</h1>
+					<h1><img class="borderless" src="img/php.png" /> Slim</h1>
+				</section>
+				<section>
+					<h2>Sadece 230 kod satiri</h2>
+					<pre><code>$ uglifyjs -b -nm --no-seqs -ns -nc meryl.js | wc -l
+     233</code></pre>
+     			</section>
+				</section>
+				<section>
 					<h2>Ayaklarimizi suya sokalim.</h2>
-					<pre><code>// take the pills
+					<pre><code>var http = require('http');
 var meryl = require('meryl');
 
-// first, take it easy
-meryl.get('/', function (req, resp) {
-    resp.end('&lt;h3&gt;Hello, World!&lt;/h3&gt;');
+meryl.handle('GET /', function (req, resp) {
+  resp.end('Hello World');
 });
 
-// not impressed? let it interfere with blood some more
-meryl.get('/greet/{who}', function(req, resp) {
-    resp.render('greeter_template', {name: req.params.who});
-});
+var server = http.createServer(meryl.cgi());
 
-// lay down and enjoy it
-meryl.plug('GET *', function(req, resp, next) {
-    resp.setHeader('server', 'meryl');
-    next();
-});
-
-// now you are a 'meryl' junkie
-meryl.run();
+server.listen(3000);
 					</code></pre>
 				</section>
 				<section>
-					<h2>Tam olarak nasil?</h2>
-					<img class="borderless" src="img/layers.png" />
+					<h2>Yonlendiriciler (Routers) ve Url Dokulari (Url Patterns)</h2>
+					<pre><code>var http = require('http');
+var meryl = require('meryl');
+
+meryl.handle('GET /', function (req, resp) {
+  resp.end('Hello World');
+});
+
+meryl.handle('GET /{name}', function (req, resp) {
+  resp.end('Hello ' + req.params.name);
+});
+
+var server = http.createServer(meryl.cgi());
+
+server.listen(3000);</code></pre>
 				</section>
 				<section>
 					<h2>Eklentiler (Plugins)</h2>
+						<pre><code>var http = require('http');
+var meryl = require('meryl');
+
+meryl.plug('*', function (req, resp, next) {
+  resp.setHeader('X-Server', 'Meryl');
+  next();
+});
+
+meryl.handle('GET /', function (req, resp) {
+  resp.end('Hello World');
+});
+
+meryl.handle('GET /{name}', function (req, resp) {
+  resp.end('Hello ' + req.params.name);
+});
+
+var server = http.createServer(meryl.cgi());
+
+server.listen(3000);</code></pre>
+				</section>
+				<section>
+					<h2>Tam olarak nasil?</h2>
+					<p>next plugin > next plugin > next plugin > handler</p>
+					<img class="borderless" src="img/layers.png" />
+				</section>
+				<section>
+					<h2>Biraz Makyaj?</h2>
 						<pre><code>var meryl = require('meryl');
 
-var users = { 'id1': 'kermit', 'id2': 'beaker' };
-
-// Simple authorization plugin
-meryl.plug('*', function(req, resp, next) {
-	var username = users[req.params.query.userid];
-	if (username) {
-		req.username = username;
-		next();
-	} else {
-		resp.statusCode = 401;
-		throw new Error('access denied');
-	}
+meryl.plug('*', function (req, resp, next) {
+  resp.setHeader('x-server', 'Meryl');
+  next();
 });
 
 meryl.get('/', function (req, resp) {
-	resp.end('Hello ' + req.username);
+  resp.end('Hello World');
 });
-meryl.run();
-					</code></pre>
+
+meryl.get('/{name}', function (req, resp) {
+  resp.end('Hello ' + req.params.name);
+});
+
+meryl.run()</code></pre>
 				</section>
 				<section>
-					<h2>Yonlendiriciler (routers)</h2>
-					<pre><code>var meryl = require('meryl');
+					<h2>Biraz Daha?</h2>
+						<pre><code>var meryl = require('meryl');
 
-var users = { 'id1': 'kermit', 'id2': 'beaker' };
-
-meryl.get('/', function (req, resp) {
-  for (userid in users) {
-    var username = users[userid];
-    resp.write('&lt;a href="/users/' + username + '"&gt;' + username +'&lt;/a&gt;');
-  }
-  resp.end();
-});
-
-meryl.get('/users/{username}', function (req, resp) {
-  resp.end('Hello ' + (req.params.username || 'World'));
-});
-
-meryl.run();
-					</code></pre>
+meryl
+  .plug('*', function (req, resp, next) {
+    resp.setHeader('x-server', 'Meryl');
+    next();
+  })
+  .get('/', function (req, resp) {
+    resp.end('Hello World');
+  })
+  .get('/{name}', function (req, resp) {
+    resp.end('Hello ' + req.params.name);
+  })
+  .run();</code></pre>
 				</section>
 				<section>
-					<h2>Soblonlar (templates)</h2>
+					<h2>Ya Sablonlar?</h2>
+						<pre><code>// server.js
+
+meryl.get('/{name}', function (req, resp) {
+  resp.render('greeting', {name: req.params.name});
+});
+</code></pre>
+						<pre><code>&lt;!-- greeting.jshtml --&gt;
+
+&lt;h1&gt;Hello <%= name %>&lt;/h1&gt;
+</code></pre>
+				</section>
+				<section>
+					<h2>Micro-Templating</h2>
+					<img src="img/johnresig.jpg" />
+					<a href="http://ejohn.org/blog/javascript-micro-templating">http://ejohn.org/blog/javascript-micro-templating/</a>
+					<p>&nbsp;</p>
+					<img src="img/kemal.jpg" /> <blockquote>Anaaam Jquery' i yazan adam degil mi o!</blockquote>
+				</section>
+				<section>
+					<h2>Micro-Templating zaten cepte, baska ne kulllanmak istersiniz?</h2>
+					<ul class="smaller">
+						<li><a href="https://github.com/mauricemach/coffeekup">CoffeeKup</a> — Markup as CoffeeScript.</li>
+						<li><a href="http://akdubya.github.com/dustjs">dust</a> — Async, streaming &amp; composable templates for the browser and node</li>
+						<li><a href="https://github.com/sstephenson/eco">Eco</a> — Embedded CoffeeScript templates</li>
+						<li><a href="https://github.com/visionmedia/haml.js">haml.js</a> — Faster / more compliant implementation of Haml.</li>
+						<li><a href="https://github.com/raycmorgan/Mu">Mu (Mustache)</a> — A Mustache engine that compiles templates into very fast rendering functions. Also streams the</li>
+						<li><a href="https://github.com/indutny/nTPL">nTPL</a> — Fast &amp; Native extendable template system</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Sanki birseyler eksik gibi?</h2>
+					<img src="img/futurama_fry.jpg" />
+				</section>
+				<section>
+					<h2>Kararli ve guclu bir orta katman</h2>
+					<img class="borderless" src="img/middleware.png" />
+				</section>
+				<section data-state="soothe">
+					<img class="borderless" src="img/connect.png" />
+				</section>
+				<section>
+					<h2>Nasil?</h2>
 					<pre><code>var meryl = require('meryl');
-var users = { 'id1': 'kermit', 'id2': 'beaker' };
+var connect = require('connect');
+
+meryl.plug(connect.logger());
+meryl.plug(connect.static(__dirname));
+
 meryl.get('/', function (req, resp) {
-  resp.render('index', {'users': users});
+  resp.end('&lt;img src="meryl.png" /&gt;');
 });
-meryl.get('/users/{username}', function (req, resp) {
-  resp.render('userdetail', {'username': req.params.username});
-});
+
 meryl.run();
-					</code></pre>
-					<pre><code>&lt;!-- index.jshtml --&gt;
-&lt;ul&gt;
-  &lt;% for (userid in users) { %&gt;
-    &lt;li&gt;
-      &lt;a href="/users/&lt;%= users[userid] %&gt;"&gt;&lt;%= users[userid] %&gt;&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;% } %&gt;
-&lt;/ul&gt;
-					</code></pre>
-					<pre><code>&lt;!-- userdetail.jshtml --&gt;
-&lt;h1&gt;Hello &lt;%= username %&gt;&lt;/h1&gt;
-					</code></pre>
+</code></pre>
+				</section>
+				<section>
+					<h2>Connect' in sagladigi katmanlar</h2>
+					<ul class="smaller">
+						<li><a href="logger.html">logger</a> request logger with custom format support</li>
+						<li><a href="csrf.html">csrf</a> Cross-site request forgery protection</li>
+						<li><a href="compress.html">compress</a> Gzip compression middleware</li>
+						<li><a href="basicAuth.html">basicAuth</a> basic http authentication</li>
+						<li><a href="bodyParser.html">bodyParser</a> extensible request body parser</li>
+						<li><a href="json.html">json</a> application/json parser</li>
+						<li><a href="multipart.html">multipart</a> multipart/form-data parser</li>
+						<li><a href="cookieParser.html">cookieParser</a> cookie parser</li>
+						<li><a href="session.html">session</a> session management support with bundled MemoryStore</li>
+						<li><a href="static.html">static</a> streaming static file server supporting <code>Range</code> and more</li>
+						<li><a href="directory.html">directory</a> directory listing middleware</li>
+						<li><a href="query.html">query</a> automatic querystring parser, populating <code>req.query</code></li>
+						<li><a href="errorHandler.html">more</a> ...</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Kucuk bir uygulama</h2>
+					<pre><code>var meryl = require('../../index'),
+  connect = require('connect');
+
+var twinkles = ['My first wink', 'Lets twinkle again!'];
+
+meryl
+  .plug(
+    connect.logger(),
+    connect.static(__dirname + '/public'),
+    connect.bodyParser()
+  )
+  .get('/', function (req, resp) {
+    resp.render('index', {twinkles: twinkles});
+  })
+  .post('/newwink', function (req, resp) {
+    twinkles.push(req.body.wink);
+    resp.redirect('/');
+  })
+  .run({templateDir: 'views'});
+</code></pre>
+				</section>
+				<section>
+					<img src="img/twinkler.png" />
+				</section>
+				<section>
+					<h2>Daha ozellikli alternatifler</h2>
+					<img src="img/express.jpg" /> <br />
+					<img src="img/geddy.gif" /> <br />
+					<img src="img/railway.gif" /> <br />
+				</section>
+				<section data-state="blackout">
+					<img src="img/emrah.jpg" />
+					<blockquote>Bana biraz destek olur musun abi?</blockquote>
+				</section>
+				<section data-state="soothe">
+					<h2>Kahve Molasi</h2>
+					<img class="borderless" src="img/coffeemate.png" />
+				</section>
+				<section>
+					<h2>Neye benziyor?</h2>
+					<pre><code># Require it
+mate = require 'coffeemate'
+
+# Connect it
+mate.logger()
+mate.static("#{__dirname}/public")
+
+# Extend it
+mate.context.highlight = (color, txt) ->
+  "<span style=\"background-color:#{color}\">#{txt}</span>"
+
+# Route it
+mate.get '/greet/:name', ->
+    # this is context variable
+    @greet_msg = "Hello, #{@req.params.name}"
+    @render 'main'
+
+# Remote it
+mate.now.greet = ->
+    console.log 'Hello, World!'
+
+# Listen it
+mate.listen 3000</code></pre>
 				</section>
 				<section>
 					<h1>SORU - CEVAP</h1>
@@ -264,7 +420,7 @@ meryl.run();
 				<section>
 					<h1>TESEKKURLER :)</h1>
 					<img src="img/thank_you.jpg" />
-					<p><small>kadirpekel@gmail.com</small></p>
+					<p><small><a href="http://twitter.com/kadirpekel">@kadirpekel</a></small></p>
 				</section>
 			</div>
 
